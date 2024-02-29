@@ -1,2 +1,2 @@
 # HurricaneTracker
-The terrifying hurricane Florence just passed through part of the East Coast of the United States, leaving an estimated damage of 17 billion USD. This tutorial will help you to find out where it came from, when and where it got stronger and understand more about this natural disaster and analyze it in Python.
+This tutorial will help you trace the path of Hurricane Florence that hit the Unites States, when and where it got stronger and understand more about this natural disaster and analyze it in Python.
