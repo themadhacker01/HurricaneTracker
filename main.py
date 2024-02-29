@@ -15,10 +15,10 @@ country = gpd.geopandas.read_file('data/gz_2010_us_040_00_5m.json')
 # Alternately, you can use the head() function
 # print(country.loc[0:5])
 
-eff_country = country[country['NAME'].isin(['Alaska', 'Hawaii']) == False]
+filtered_country = country[country['NAME'].isin(['Alaska', 'Hawaii']) == False]
 
 # Plot the geo-dataframe and show it in a browser
-# eff_country.plot()
+# filtered_country.plot()
 
 # Shows the matrix plot in a seperate window
 # plt.show()
@@ -58,6 +58,13 @@ florence_data['Coordinates'] = florence_data['Coordinates'].apply(Point)
 florence_data = gpd.GeoDataFrame(florence_data, geometry='Coordinates')
 print(florence_data.head())
 
-# Plot the geo-dataframe using matplotlib
-florence_data.plot()
+# Plot the hurricane florence geodataframe
+# florence_data.plot()
+
+# Setting the base plot as US country
+fig, axes = plt.subplots(1, figsize=(10, 6))
+base = filtered_country.plot(ax=axes)
+
+# Overlaying the hurricane florence on top
+florence_data.plot(ax=base, color='red')
 plt.show()
